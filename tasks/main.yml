@@ -1,0 +1,10 @@
+---
+# tasks file for helloweb
+- name: install helloweb
+  docker_container:
+    name: helloweb
+    image: dianetete/helloweb
+    ports:
+      - 81:80
+  when: (ansible_distribution == "Ubuntu" or ansible_os_family == "RedHat")
+
